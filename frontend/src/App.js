@@ -1,3 +1,4 @@
+import { memo } from "react";
 /**
  * The application class
  * @author Oren Sokoler
@@ -5,16 +6,10 @@
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import MainPage from './components/MainPage';
-
-function App() {
-
-  return (
-    <div className="App">
+const App = memo(function App() {
+  return <div className="App">
         <MainPage />
-    </div>
-  );
-}
-
+    </div>;
+});
 export default App;
