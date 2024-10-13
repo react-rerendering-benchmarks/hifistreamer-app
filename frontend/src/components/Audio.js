@@ -63,6 +63,7 @@ class Audio extends Component {
     fetch(getAPIurl() + "/audio?device=" + this.state.selected.value, requestOptions).then(this.getDeviceList());
   }
   render() {
+    console.log(window.globalCount++);
     return <Form>
                 <Form.Group as={Row} className="mt-4 ms-4">
                     <Form.Label className="Page-text" column md="auto">

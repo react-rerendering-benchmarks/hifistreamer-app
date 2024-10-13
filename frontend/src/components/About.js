@@ -35,6 +35,7 @@ class About extends Component {
     });
   }
   render() {
+    console.log(window.globalCount++);
     return <Container className="Page-text">
                 <Row className="mt-4 ms-2">
                     <Col>

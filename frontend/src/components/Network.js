@@ -209,6 +209,7 @@ class Network extends Component {
     }
   }
   render() {
+    console.log(window.globalCount++);
     return <Form className='Page-text'>
                 <Col>
                     <Form.Group as={Row} className="mt-4 ms-4">
