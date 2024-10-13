@@ -8,6 +8,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainPage from './components/MainPage';
 const App = memo(function App() {
+  console.log(window.globalCount++);
   return <div className="App">
         <MainPage />
     </div>;

@@ -20,6 +20,7 @@ import "../css/NavLink.css";
  * The system tab pane - navigates between the system pages
  */
 const System = memo(function System() {
+  console.log(window.globalCount++);
   return <div className='Page-container' style={{
     background: '#565e64'
   }}>

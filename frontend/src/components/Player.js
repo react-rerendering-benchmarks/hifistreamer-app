@@ -12,6 +12,7 @@ import '../css/Page.css';
  * Render the Mopidy-Iris player in an iframe
  */
 const Player = memo(function Player() {
+  console.log(window.globalCount++);
   return <div className='Page-container'>
           <iframe title='Mopidy-Iris' src={getAPIurl() + '/iris/'} className='Page-content' />
         </div>;
