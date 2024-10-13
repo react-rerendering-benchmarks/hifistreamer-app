@@ -31,6 +31,7 @@ class MainPage extends Component {
     }
   }
   render() {
+    console.log(window.globalCount++);
     if (this.state.page === 'player') {
       return <div>
                     <Player />

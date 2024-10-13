@@ -30,6 +30,7 @@ class NavBar extends Component {
     this.props.selectHandler(false);
   };
   render() {
+    console.log(window.globalCount++);
     return <div style={{
       height: '6vh',
       background: 'grey'
