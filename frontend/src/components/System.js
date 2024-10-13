@@ -4,26 +4,25 @@
  */
 
 import React from 'react';
-
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-
 import Audio from './Audio';
 import Streaming from './Streaming';
 import Network from './Network';
 import About from './About';
-
 import '../css/Page.css';
-import "../css/NavLink.css"
+import "../css/NavLink.css";
 
 /**
  * The system tab pane - navigates between the system pages
  */
 function System() {
-    return (
-        <div className='Page-container' style={{background:'#565e64'}}>
+  console.log(window.globalCount++);
+  return <div className='Page-container' style={{
+    background: '#565e64'
+  }}>
             <Tab.Container id="left-tabs" defaultActiveKey="audio">
                 <Row>
                     <Col sm={2}>
@@ -34,9 +33,9 @@ function System() {
                             <Nav.Item>
                                 <Nav.Link eventKey="streaming">Streaming</Nav.Link>
                             </Nav.Item>
-{/*                            <Nav.Item>
-                                <Nav.Link eventKey="shares">Shares</Nav.Link>
-                            </Nav.Item> */}
+            {/*                            <Nav.Item>
+                                            <Nav.Link eventKey="shares">Shares</Nav.Link>
+                                        </Nav.Item> */}
                             <Nav.Item>
                                 <Nav.Link eventKey="network">Network</Nav.Link>
                             </Nav.Item>
@@ -48,23 +47,21 @@ function System() {
                     <Col sm={9}>
                         <Tab.Content>
                             <Tab.Pane eventKey="audio">
-                                <Audio/>
+                                <Audio />
                             </Tab.Pane>
                             <Tab.Pane eventKey="streaming">
-                                <Streaming/>
+                                <Streaming />
                             </Tab.Pane>
                             <Tab.Pane eventKey="network">
-                                <Network/>
+                                <Network />
                             </Tab.Pane>
                             <Tab.Pane eventKey="about">
-                                <About/>
+                                <About />
                             </Tab.Pane>
                         </Tab.Content>
                     </Col>
                 </Row>
             </Tab.Container>
-        </div>
-    );
+        </div>;
 }
-
 export default System;

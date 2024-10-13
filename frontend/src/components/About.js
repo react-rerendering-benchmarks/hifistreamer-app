@@ -3,49 +3,39 @@
  * @author Oren Sokoler
  */
 
-import {getAPIurl} from './Config.js'
-
+import { getAPIurl } from './Config.js';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
-
 import React, { Component } from 'react';
 
 /**
  * The about page, provides general information on the system
  */
 class About extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            version : '',
-            processor : '',
-            memory : '',
-            disk : '',
-            kernel : ''
-        }
-    }
-
-    componentDidMount() {
-        fetch(getAPIurl() + "/about")
-        .then(response => response.json())
-        .then(
-          (result) => {
-            this.setState({
-              version: result.version,
-              processor: result.processor,
-              memory: result.memory,
-              disk: result.disk,
-              kernel: result.kernel
-            });
-          }
-        )        
-    }
-
-    render() {
-        return (
-            <Container className="Page-text">
+  constructor(props) {
+    super(props);
+    this.state = {
+      version: '',
+      processor: '',
+      memory: '',
+      disk: '',
+      kernel: ''
+    };
+  }
+  componentDidMount() {
+    fetch(getAPIurl() + "/about").then(response => response.json()).then(result => {
+      this.setState({
+        version: result.version,
+        processor: result.processor,
+        memory: result.memory,
+        disk: result.disk,
+        kernel: result.kernel
+      });
+    });
+  }
+  render() {
+    return <Container className="Page-text">
                 <Row className="mt-4 ms-2">
                     <Col>
                         HiFiStreamer version {this.state.version}
@@ -67,9 +57,7 @@ class About extends Component {
                     <Col sm={2}>Kernel</Col>
                     <Col>{this.state.kernel}</Col>
                 </Row>
-            </Container>
-        );
-    }
+            </Container>;
+  }
 }
-
 export default About;
